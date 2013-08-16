@@ -27,7 +27,8 @@ sudo yum install -y \
 	pcre-devel \
 	zlib-devel 
 
-cd /vagrant
+#Download in the home directory of the VM. Don't use the shared directory.
+cd ~
 
 #Obtain the SPRM
 yumdownloader --source shibboleth
@@ -35,10 +36,6 @@ yumdownloader --source shibboleth
 #Rebuild with FastCGI support
 rpmbuild --rebuild shibboleth*.src.rpm --with fastcgi
 
-#Copy the RPMs out and back to the shared folder
-rsync --no-relative -vahu ~/rpmbuild/RPMS/* .
-
 #Remove original SRPM
 rm shibboleth*.src.rpm -f
 
-#All done - see ya!

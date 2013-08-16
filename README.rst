@@ -6,7 +6,12 @@ applications for use with your favourite non-Apache and non-IIS web server.
 Unfortunately, the default distributions don’t come with it built by default.
 
 This is powered by `Vagrant <http://vagrantup.com>`_ to quickly spin up a
-CentOS VM, recompile the RPMs, and destroy it afterwards.
+CentOS VM, recompile the RPMs, and destroy it afterwards.  If you're not
+so inclined to use Vagrant (why?), then you can use the ``rebuild.sh`` script
+directly on your own RHEL or CentOS VM.
+
+Go!
+---
 
 This will always build the **latest version** of the Shibboleth SP. 
 
