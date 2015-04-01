@@ -3,8 +3,8 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box     = "centos-64-x64-vbox4210"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210.box"
+  config.vm.box = "centos-6.5-x86_64"
+  config.vm.box_url = "https://www.hpc.jcu.edu.au/boxes/centos-6.5-x86_64.box"
 
   #Re-build the Shibboleth SP with FastCGI support
   config.vm.provision :shell, :path => "rebuild.sh"
