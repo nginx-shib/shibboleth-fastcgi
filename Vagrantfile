@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "copy-rpms-out.sh"
 
   config.vm.provider :virtualbox do |vb|
+    vb.name = "vagrant-shibboleth-sp-rebuild"
     vb.customize ["modifyvm", :id, "--cpus", "8"]
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
