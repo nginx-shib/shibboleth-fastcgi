@@ -25,7 +25,8 @@ sudo yum install -y \
 	httpd-devel \
 	redhat-rpm-config \
 	pcre-devel \
-	zlib-devel 
+	zlib-devel \
+	libmemcached-devel
 
 #Download in the home directory of the VM. Don't use the shared directory.
 cd ~
