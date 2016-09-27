@@ -1,0 +1,6 @@
+version: '2'
+services:
+  shibboleth-fastcgi-build:
+    build: .
+    volumes:
+      - .:/app
