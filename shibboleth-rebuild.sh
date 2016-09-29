@@ -1,7 +1,11 @@
 #!/bin/sh
 
-# Obtain the SRPM
-yumdownloader --source shibboleth
+# Download specific Shibboleth version or just the latest version
+if [ "$_SHIBBOLETH_VERSION"  ]; then
+    yumdownloader --source "shibboleth-$_SHIBBOLETH_VERSION"
+else
+    yumdownloader --source shibboleth
+fi
 
 # Install the SRPM's dependencies
 sudo yum-builddep -y shibboleth*.src.rpm
