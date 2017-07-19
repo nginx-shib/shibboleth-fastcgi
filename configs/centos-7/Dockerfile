@@ -1,12 +1,12 @@
-FROM centos:6
+FROM centos:7
 MAINTAINER "JCU eResearch Centre" <eresearch.nospam@jcu.edu.au>
 
 # Install from OpenSUSE's Shibboleth repository
-RUN curl http://download.opensuse.org/repositories/security://shibboleth/RHEL_6/security:shibboleth.repo > /etc/yum.repos.d/shibboleth.repo
-RUN rpm --import http://download.opensuse.org/repositories/security:/shibboleth/RHEL_6//repodata/repomd.xml.key
+RUN curl https://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/security:shibboleth.repo > /etc/yum.repos.d/shibboleth.repo
+RUN rpm --import https://download.opensuse.org/repositories/security:/shibboleth/CentOS_7//repodata/repomd.xml.key
 
-# Configure EPEL for fcgi-devel
-RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+# Install EPEL for fcgi-devel
+RUN yum install -y epel-release
 
 # Install required packages for building
 RUN yum install -y \
@@ -27,4 +27,5 @@ CMD /app/shibboleth-rebuild.sh && \
   yum install -y ~/rpmbuild/RPMS/x86_64/*.rpm && \
   /usr/lib64/shibboleth/shibauthorizer && \
   /usr/lib64/shibboleth/shibresponder && \
-  rsync --no-relative -vahu ~/rpmbuild/RPMS ~/rpmbuild/SRPMS /app/build
+  mkdir -p /app/build/centos-7/ && \
+  rsync --no-relative -vahu ~/rpmbuild/RPMS ~/rpmbuild/SRPMS /app/build/centos-7/

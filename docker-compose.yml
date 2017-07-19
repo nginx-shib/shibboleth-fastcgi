@@ -1,6 +1,10 @@
 version: '2'
 services:
-  shibboleth-fastcgi-build:
-    build: .
+  shibboleth-fastcgi-build-centos-6:
+    build: configs/centos-6/
+    volumes:
+      - .:/app
+  shibboleth-fastcgi-build-centos-7:
+    build: configs/centos-7/
     volumes:
       - .:/app

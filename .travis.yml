@@ -6,11 +6,11 @@ sudo: required
 services:
   - docker
 env:
-  DOCKER_COMPOSE_VERSION: 1.7.1
+  DOCKER_COMPOSE_VERSION: 1.14.0
   DEBIAN_FRONTEND: noninteractive
 before_install:
   - sudo apt-get update
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine
+  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-ce
   - sudo service docker restart
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
