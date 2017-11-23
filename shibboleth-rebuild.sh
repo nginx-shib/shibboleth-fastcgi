@@ -8,7 +8,14 @@ else
 fi
 
 # Install the SRPM's dependencies
-sudo yum-builddep -y shibboleth*.src.rpm
+# There currently appears to be a bug in yum-builddep where it tries to
+# install a 32-bit version of httpd-devel when run against the RPM vs
+# its spec file.
+#sudo yum-builddep -y shibboleth*.src.rpm
+
+sudo rpm -i shibboleth*.src.rpm
+sudo yum-builddep -y ~/rpmbuild/SPECS/shibboleth.spec
+
 # Is there a way of passing --with fastcgi to yum-builddep or getting PreReq
 # installed without manual intervention?
 sudo yum install -y \
