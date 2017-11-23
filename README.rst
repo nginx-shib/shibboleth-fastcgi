@@ -24,6 +24,11 @@ If you can help twist someone's arm to adjust this decision, that'd help
 eliminate the need for this repository and us manually rebuilding Shibboleth
 each time a new release comes out.
 
+By "manually", we mean watching for or otherwise being told about new
+Shibboleth SP releases.  Here's the `current ATOM feed <https://wiki.shibboleth.net/confluence/spaces/createrssfeed.action?spaces=NEWS&sort=modified&title=Shibboleth+News+Blog&maxResults=15&publicFeed=true&rssType=atom&timeSpan=365&showContent=true&types=blogpost&maxResults=20>`_
+from the Shibboleth wiki covering their blog post announcements, which
+occasionally include SP software releases.
+
 Building
 --------
 
