@@ -8,20 +8,22 @@ else
 fi
 
 # Install the SRPM's dependencies
-# There currently appears to be a bug in yum-builddep where it tries to
-# install a 32-bit version of httpd-devel when run against the RPM vs
-# its spec file.
-#sudo yum-builddep -y shibboleth*.src.rpm
-
-sudo rpm -i shibboleth*.src.rpm
-sudo yum-builddep -y ~/rpmbuild/SPECS/shibboleth.spec
+sudo yum-builddep -y shibboleth*.src.rpm
 
 # Is there a way of passing --with fastcgi to yum-builddep or getting PreReq
 # installed without manual intervention?
+#
+# There is also an issue where yum-builddep tries to install a 32-bit httpd-devel
+# when run against a .src.rpm on CentOS 6.  The same issue doesn't happen
+# against the .spec file. Conversely, libmemcached-devel has the same issue in
+# reverse on CentOS 7 (installs with .src.rpm and doesn't under .spec).
+# See https://github.com/nginx-shib/shibboleth-fastcgi/issues/3
 sudo yum install -y \
     fcgi-devel \
     xmltooling-schemas \
-    opensaml-schemas
+    opensaml-schemas \
+    httpd-devel \
+    libmemcached-devel
 
 # Rebuild with FastCGI support
 rpmbuild --rebuild shibboleth*.src.rpm --with fastcgi
