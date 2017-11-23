@@ -2,8 +2,8 @@ FROM centos:6
 MAINTAINER "JCU eResearch Centre" <eresearch.nospam@jcu.edu.au>
 
 # Install from OpenSUSE's Shibboleth repository
-RUN curl https://download.opensuse.org/repositories/security://shibboleth/RHEL_6/security:shibboleth.repo > /etc/yum.repos.d/shibboleth.repo
-RUN rpm --import https://download.opensuse.org/repositories/security:/shibboleth/RHEL_6//repodata/repomd.xml.key
+RUN curl https://download.opensuse.org/repositories/security://shibboleth/CentOS_CentOS-6/security:shibboleth.repo > /etc/yum.repos.d/shibboleth.repo
+RUN rpm --import https://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
 
 # Configure EPEL for fcgi-devel
 RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
