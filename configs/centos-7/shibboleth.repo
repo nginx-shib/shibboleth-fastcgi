@@ -1,0 +1,8 @@
+[shibboleth]
+name=Shibboleth (CentOS_7)
+# Please report any problems to https://issues.shibboleth.net
+type=rpm-md
+mirrorlist=https://shibboleth.net/cgi-bin/mirrorlist.cgi/CentOS_7
+gpgcheck=1
+gpgkey=https://downloadcontent.opensuse.org/repositories/security:/shibboleth/CentOS_7/repodata/repomd.xml.key
+enabled=1
