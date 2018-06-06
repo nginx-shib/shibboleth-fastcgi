@@ -65,6 +65,6 @@ service.
 Contributing
 ------------
 
-PR are welcomed if you want to add another distribution or OS to the list of
+PRs are welcomed if you want to add another distribution or OS to the list of
 builds.  All support maintaining this configuration or these packages is
 welcomed.
