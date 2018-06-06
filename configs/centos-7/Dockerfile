@@ -1,9 +1,9 @@
 FROM centos:7
 MAINTAINER "JCU eResearch Centre" <eresearch.nospam@jcu.edu.au>
 
-# Install from OpenSUSE's Shibboleth repository
-RUN curl https://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/security:shibboleth.repo > /etc/yum.repos.d/shibboleth.repo
-RUN rpm --import https://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/repodata/repomd.xml.key
+# Install Shibboleth's recommended Service Provider repo as per
+# https://shibboleth.net/downloads/service-provider/RPMS/
+ADD configs/centos-7/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 
 # Install EPEL for fcgi-devel
 RUN yum install -y epel-release
