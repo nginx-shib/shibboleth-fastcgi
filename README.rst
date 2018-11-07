@@ -6,7 +6,7 @@ Recompiling Shibboleth SP RPMs with FastCGI support
 
 The Shibboleth SP software features FastCGI authorizer and responder
 applications for use with any web server that supports FastCGI.
-This is used with nginx with the `nginx-http-shibboleth
+This is used with Nginx with the `nginx-http-shibboleth
 <https://github.com/nginx-shib/nginx-http-shibboleth>`_ module, but is
 entirely web-server agnostic as it is simply a rebuild of the existing
 packages.
@@ -15,9 +15,9 @@ Why?
 ----
 
 Unfortunately, the default distributions of the Shibboleth SP don't come with
-this support built by default.  Questions have been raised on the Shibboleth
-mailing list about adding this support to the core build, but to date this
-hasn't happened because the ``fcgi-devel`` package lives in the EPEL
+FastCGI support built by default.  Questions have been raised on the
+Shibboleth mailing list about adding this support to the core build, but to
+date this hasn't happened because the ``fcgi-devel`` package lives in the EPEL
 repositories and not the core.
 
 If you can help twist someone's arm to adjust this decision, that'd help
@@ -27,7 +27,7 @@ each time a new release comes out.
 By "manually", we mean watching for or otherwise being told about new
 Shibboleth SP releases.  Here's the `current ATOM feed <https://wiki.shibboleth.net/confluence/spaces/createrssfeed.action?spaces=NEWS&sort=modified&title=Shibboleth+News+Blog&maxResults=15&publicFeed=true&rssType=atom&timeSpan=365&showContent=true&types=blogpost&maxResults=20>`_
 from the Shibboleth wiki covering their blog post announcements, which
-occasionally include SP software releases.
+occasionally includes SP software releases.
 
 Building
 --------
@@ -65,6 +65,6 @@ service.
 Contributing
 ------------
 
-PRs are welcomed if you want to add another distribution or OS to the list of
-builds.  All support maintaining this configuration or these packages is
-welcomed.
+Pull requests are welcome, especially if you want to add another distribution
+or OS to the list of builds.  All support maintaining the existing
+configuration or these packages is greatly appreciated.

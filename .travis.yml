@@ -1,6 +1,7 @@
 env:
   - _SHIBBOLETH_VERSION=2.5.6
   - _SHIBBOLETH_VERSION=2.6.1
+  - _SHIBBOLETH_VERSION=3.0.2
   - _SHIBBOLETH_VERSION=
 sudo: required
 services:
