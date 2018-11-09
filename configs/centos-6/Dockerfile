@@ -1,5 +1,4 @@
 FROM centos:6
-MAINTAINER "JCU eResearch Centre" <eresearch.nospam@jcu.edu.au>
 
 # Install Shibboleth's recommended Service Provider repo as per
 # https://shibboleth.net/downloads/service-provider/RPMS/
