@@ -20,9 +20,11 @@ RUN yum install -y \
 RUN mkdir -p /app/build
 
 # 1. Build
-# 2. Test
+# 2. Test by installing/running
+#    Remove any installed packages from previous docker-compose runs
 # 3. Copy the RPMs back to the host volume
 CMD /app/shibboleth-rebuild.sh && \
+  yum remove -y shibboleth* && \
   yum install -y ~/rpmbuild/RPMS/x86_64/*.rpm && \
   /usr/lib64/shibboleth/shibauthorizer && \
   /usr/lib64/shibboleth/shibresponder && \

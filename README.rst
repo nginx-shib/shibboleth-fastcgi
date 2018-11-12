@@ -47,13 +47,14 @@ by spinning up a Docker container for recompilation of the RPMs.
 #. Enjoy your new RPMs, available in the `build/` directory, categorised by
    OS and distribution name.
 
+#. When finished building, clean up your environment::
+
+       docker-compose down -v
+
 If you're not into Docker, then you can use the ``shibboleth-rebuild.sh``
 script directly on your own RHEL or CentOS VM.  You'll need to ensure you have
 set up the basic dependencies of building RPMs first; see any of the
 ``Dockerfile`` files for more information.
-
-Note
-----
 
 If you're just looking to download something that works and don't want to
 rebuild things yourself, the James Cook University eResearch Centre provides
@@ -61,6 +62,20 @@ EL x86_64 packages in repos at
 https://www.hpc.jcu.edu.au/repos/jcu_eresearch/. You'll need to trust our RPM
 building skills and note that no support is offered to the public for this
 service.
+
+Developing
+----------
+
+If running ``docker-compose up`` repeatedly, such as when you might be
+modifying the build scripts, note that ``docker-compose`` create anonymous
+volumes and retains the file system from the initial run of the containers.
+This means that the built ``shibboleth`` packages will be "installed" already.
+We automatically handle this by cleaning up this situation in each relevant
+``Dockerfile`` but you can start afresh with a call like so::
+
+   docker-compose up -V
+
+which removes the anonymous volumes before starting again.
 
 Contributing
 ------------
