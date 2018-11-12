@@ -67,7 +67,7 @@ Developing
 ----------
 
 If running ``docker-compose up`` repeatedly, such as when you might be
-modifying the build scripts, note that ``docker-compose`` create anonymous
+modifying the build scripts, note that ``docker-compose`` creates anonymous
 volumes and retains the file system from the initial run of the containers.
 This means that the built ``shibboleth`` packages will be "installed" already.
 We automatically handle this by cleaning up this situation in each relevant
@@ -76,6 +76,9 @@ We automatically handle this by cleaning up this situation in each relevant
    docker-compose up -V
 
 which removes the anonymous volumes before starting again.
+
+For more details, see `Overview of Docker Compose
+<https://docs.docker.com/compose/overview/#preserve-volume-data-when-containers-are-created>`_.
 
 Contributing
 ------------
