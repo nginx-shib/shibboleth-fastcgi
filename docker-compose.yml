@@ -1,12 +1,12 @@
 version: '2'
 services:
-  shibboleth-fastcgi-build-centos-6:
+  centos-6:
     build:
       context: .
       dockerfile: ./configs/centos-6/Dockerfile
     volumes:
       - .:/app
-  shibboleth-fastcgi-build-centos-7:
+  centos-7:
     build:
       context: .
       dockerfile: ./configs/centos-7/Dockerfile
