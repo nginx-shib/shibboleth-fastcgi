@@ -42,14 +42,14 @@ by spinning up a Docker container for recompilation of the RPMs.
 
        git clone https://github.com/nginx-shib/shibboleth-fastcgi.git
        cd shibboleth-fastcgi
-       docker-compose up
+       make
 
 #. Enjoy your new RPMs, available in the `build/` directory, categorised by
    OS and distribution name.
 
 #. When finished building, clean up your environment::
 
-       docker-compose down -v
+       make clean
 
 If you're not into Docker, then you can use the ``shibboleth-rebuild.sh``
 script directly on your own RHEL or CentOS VM.  You'll need to ensure you have
@@ -73,9 +73,10 @@ This means that the built ``shibboleth`` packages will be "installed" already.
 We automatically handle this by cleaning up this situation in each relevant
 ``Dockerfile`` but you can start afresh with a call like so::
 
-   docker-compose up -V
+   make clean
+   make
 
-which removes the anonymous volumes before starting again.
+which cleans up the anonymous volumes before starting again.
 
 For more details, see `Overview of Docker Compose
 <https://docs.docker.com/compose/overview/#preserve-volume-data-when-containers-are-created>`_.
