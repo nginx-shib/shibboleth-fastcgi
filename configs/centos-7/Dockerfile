@@ -4,6 +4,9 @@ FROM centos:7
 # https://shibboleth.net/downloads/service-provider/RPMS/
 ADD configs/centos-7/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 
+# Accept Shibboleth's GPG key
+RUN rpm --import https://downloadcontent.opensuse.org/repositories/security:/shibboleth/CentOS_7/repodata/repomd.xml.key
+
 # Install EPEL for fcgi-devel
 RUN yum install -y epel-release
 

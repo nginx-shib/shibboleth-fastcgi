@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Download specific Shibboleth version or just the latest version
 if [ "$_SHIBBOLETH_VERSION"  ]; then
@@ -27,19 +28,7 @@ sudo yum install -y \
     libmemcached-devel
 
 # Rebuild with FastCGI support
-# Disabled due to https://issues.shibboleth.net/jira/browse/SSPCPP-834
-# This can be restored when that problem is fixed in a new release
-# rpmbuild --rebuild shibboleth*.src.rpm --with fastcgi
-
-# Workaround broken .spec file
-rpm -i shibboleth-*.src.rpm
+rpmbuild --rebuild shibboleth*.src.rpm --with fastcgi
 
 # Remove original SRPM
 rm shibboleth*.src.rpm -f
-
-# Workaround broken .spec file
-cd /root/rpmbuild/SPECS
-spectool -g -R shibboleth.spec
-yum-builddep -y shibboleth.spec
-patch -p0 <  /app/fix-SSPCPP-834.patch
-rpmbuild -ba shibboleth.spec --with fastcgi
