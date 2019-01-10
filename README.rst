@@ -44,7 +44,7 @@ by spinning up a Docker container for recompilation of the RPMs.
        cd shibboleth-fastcgi
        make
 
-#. Enjoy your new RPMs, available in the `build/` directory, categorised by
+#. Enjoy your new RPMs, available in the ``build/`` directory, categorised by
    OS and distribution name.
 
 #. When finished building, clean up your environment::
