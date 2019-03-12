@@ -12,4 +12,4 @@ clean:
 	docker-compose down --volumes --remove-orphans
 	rm -rf build/centos-*/*
 
-.PHONY: all build
+.PHONY: all build rebuild clean
