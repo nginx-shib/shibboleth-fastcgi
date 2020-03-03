@@ -1,15 +1,18 @@
-Recompiling Shibboleth SP RPMs with FastCGI support
-===================================================
+Shibboleth SP RPMs with FastCGI support
+=======================================
 
 .. image:: https://travis-ci.org/nginx-shib/shibboleth-fastcgi.svg?branch=master
    :target: https://travis-ci.org/nginx-shib/shibboleth-fastcgi
 
 The Shibboleth SP software features FastCGI authorizer and responder
 applications for use with any web server that supports FastCGI.
-This is used with Nginx with the `nginx-http-shibboleth
-<https://github.com/nginx-shib/nginx-http-shibboleth>`_ module, but is
-entirely web-server agnostic as it is simply a rebuild of the existing
-packages.
+These applications can be used with nginx with the
+`nginx-http-shibboleth module
+<https://github.com/nginx-shib/nginx-http-shibboleth>`_, but are
+entirely web-server agnostic.  Whilst present in the Shibboleth SP
+source code, these FastCGI applications are not built into existing
+Shibboleth packages.  Hence, this repository – scripts for rebuilding
+the existing Shibboleth packages with FastCGI support.
 
 Why?
 ----
@@ -17,15 +20,16 @@ Why?
 Unfortunately, the default distributions of the Shibboleth SP don't come with
 FastCGI support built by default.  Questions have been raised on the
 Shibboleth mailing list about adding this support to the core build, but to
-date this hasn't happened because the ``fcgi-devel`` package lives in the EPEL
-repositories and not the core.
+date this hasn't happened because the ``fcgi-devel`` package lives in the `EPEL
+repositories <https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/f/>`_ and not the core.
 
 If you can help twist someone's arm to adjust this decision, that'd help
 eliminate the need for this repository and us manually rebuilding Shibboleth
 each time a new release comes out.
 
 By "manually", we mean watching for or otherwise being told about new
-Shibboleth SP releases.  Here's the `current ATOM feed <https://wiki.shibboleth.net/confluence/spaces/createrssfeed.action?spaces=NEWS&sort=modified&title=Shibboleth+News+Blog&maxResults=15&publicFeed=true&rssType=atom&timeSpan=365&showContent=true&types=blogpost&maxResults=20>`_
+Shibboleth SP releases, and then ensuring the package rebuild process
+continues to function.  Here's the `current ATOM feed <https://wiki.shibboleth.net/confluence/spaces/createrssfeed.action?spaces=NEWS&sort=modified&title=Shibboleth+News+Blog&maxResults=15&publicFeed=true&rssType=atom&timeSpan=365&showContent=true&types=blogpost&maxResults=20>`_
 from the Shibboleth wiki covering their blog post announcements, which
 occasionally includes SP software releases.
 

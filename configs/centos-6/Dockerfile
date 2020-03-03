@@ -5,7 +5,7 @@ FROM centos:6
 ADD configs/centos-6/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 
 # Accept Shibboleth's GPG key
-RUN rpm --import https://downloadcontent.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
+RUN rpm --import https://shibboleth.net/downloads/service-provider/RPMS/repomd.xml.key
 
 # Configure EPEL for fcgi-devel
 RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
