@@ -1,4 +1,4 @@
-Shibboleth SP RPMs with FastCGI support
+Shibboleth SP Packages with FastCGI support
 =======================================
 
 .. image:: https://travis-ci.org/nginx-shib/shibboleth-fastcgi.svg?branch=master
@@ -13,6 +13,16 @@ entirely web-server agnostic.  Whilst present in the Shibboleth SP
 source code, these FastCGI applications are not built into existing
 Shibboleth packages.  Hence, this repository – scripts for rebuilding
 the existing Shibboleth packages with FastCGI support.
+
+We currently support the following OSes:
+
+* CentOS/RHEL 8 (x86_64)
+* CentOS/RHEL 7 (x86_64)
+* CentOS/RHEL 6 (x86_64)
+
+The rebuilding script is designed to work with SP version 3.1.0 and up. Build
+scripts for older versions of the SP can be found in the tags and commit
+history.
 
 Why?
 ----
@@ -33,11 +43,12 @@ continues to function.  Here's the `current ATOM feed <https://wiki.shibboleth.n
 from the Shibboleth wiki covering their blog post announcements, which
 occasionally includes SP software releases.
 
+
 Building
 --------
 
 This will always build the **latest version** of the Shibboleth SP and does so
-by spinning up a Docker container for recompilation of the RPMs.
+by spinning up a Docker container for recompilation of the packages.
 
 #. Ensure `Docker <https://docs.docker.com/>`_ and `Docker Compose
    <https://docs.docker.com/compose>`_ are installed.
@@ -48,7 +59,7 @@ by spinning up a Docker container for recompilation of the RPMs.
        cd shibboleth-fastcgi
        make
 
-#. Enjoy your new RPMs, available in the ``build/`` directory, categorised by
+#. Enjoy your new packages, available in the ``build/`` directory, categorised by
    OS and distribution name.
 
 #. When finished building, clean up your environment::
@@ -56,8 +67,8 @@ by spinning up a Docker container for recompilation of the RPMs.
        make clean
 
 If you're not into Docker, then you can use the ``shibboleth-rebuild.sh``
-script directly on your own RHEL or CentOS VM.  You'll need to ensure you have
-set up the basic dependencies of building RPMs first; see any of the
+script directly on your own VM.  You'll need to ensure you have set up the
+basic dependencies of building RPMs or packages first; see any of the
 ``Dockerfile`` files for more information.
 
 If you're just looking to download something that works and don't want to
