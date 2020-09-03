@@ -4,8 +4,9 @@ FROM centos:7
 # https://shibboleth.net/downloads/service-provider/RPMS/
 ADD configs/centos-7/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 
-# Accept Shibboleth's GPG key
+# Accept Shibboleth's GPG keys
 RUN rpm --import https://shibboleth.net/downloads/service-provider/RPMS/repomd.xml.key
+RUN rpm --import https://shibboleth.net/downloads/service-provider/RPMS/cantor.repomd.xml.key
 
 # Install EPEL for fcgi-devel
 RUN yum install -y epel-release
