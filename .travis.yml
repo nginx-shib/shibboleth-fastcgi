@@ -1,5 +1,5 @@
 env:
-  - _SHIBBOLETH_VERSION=3.2.1
+  - _SHIBBOLETH_VERSION=3.2.2
   - _SHIBBOLETH_VERSION=
 sudo: required
 services:
