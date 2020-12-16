@@ -1,5 +1,8 @@
 FROM centos:6
 
+# Use archived CentOS repo URLs
+ADD configs/centos-6/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
 # Install Shibboleth's recommended Service Provider repo as per
 # https://shibboleth.net/downloads/service-provider/RPMS/
 ADD configs/centos-6/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
@@ -9,7 +12,7 @@ RUN rpm --import https://shibboleth.net/downloads/service-provider/RPMS/repomd.x
 RUN rpm --import https://shibboleth.net/downloads/service-provider/RPMS/cantor.repomd.xml.key
 
 # Configure EPEL for fcgi-devel
-RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+RUN rpm -ivh https://dl.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
 # Install required packages for building
 RUN yum install -y \
