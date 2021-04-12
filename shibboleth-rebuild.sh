@@ -8,7 +8,7 @@ if [ -x "$(command -v dnf)" ]; then
     builddep_cmd="dnf builddep"
 
     # For build dependencies: doxygen
-    dnf config-manager --set-enabled PowerTools
+    dnf config-manager --enable powertools
 else
     pkgmanager="yum"
     download_cmd="yumdownloader"
