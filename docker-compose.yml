@@ -1,20 +1,14 @@
-version: '2'
+version: '3'
 services:
   centos-8:
-    build:
-      context: .
-      dockerfile: ./configs/centos-8/Dockerfile
+    build: configs/centos-8/
     volumes:
       - .:/app
   centos-7:
-    build:
-      context: .
-      dockerfile: ./configs/centos-7/Dockerfile
+    build: configs/centos-7/
     volumes:
       - .:/app
   centos-6:
-    build:
-      context: .
-      dockerfile: ./configs/centos-6/Dockerfile
+    build: configs/centos-6/
     volumes:
       - .:/app

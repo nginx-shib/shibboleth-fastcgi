@@ -1,11 +1,11 @@
 FROM centos:6
 
 # Use archived CentOS repo URLs
-ADD configs/centos-6/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+ADD CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 
 # Install Shibboleth's recommended Service Provider repo as per
 # https://shibboleth.net/downloads/service-provider/RPMS/
-ADD configs/centos-6/shibboleth.repo /etc/yum.repos.d/shibboleth.repo
+ADD shibboleth.repo /etc/yum.repos.d/shibboleth.repo
 
 # Accept Shibboleth's GPG keys
 RUN rpm --import https://shibboleth.net/downloads/service-provider/RPMS/repomd.xml.key
