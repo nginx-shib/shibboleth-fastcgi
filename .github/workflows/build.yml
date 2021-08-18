@@ -2,7 +2,7 @@ name: Build CI
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ master ]
 
 jobs:
   build:
