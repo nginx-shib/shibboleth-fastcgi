@@ -4,11 +4,17 @@ services:
     build: configs/centos-8/
     volumes:
       - .:/app
+    environment:
+      - _SHIBBOLETH_VERSION
   centos-7:
     build: configs/centos-7/
     volumes:
       - .:/app
+    environment:
+      - _SHIBBOLETH_VERSION
   centos-6:
     build: configs/centos-6/
     volumes:
       - .:/app
+    environment:
+      - _SHIBBOLETH_VERSION

@@ -1,8 +1,8 @@
 Shibboleth SP Packages with FastCGI support
 =======================================
 
-.. image:: https://travis-ci.org/nginx-shib/shibboleth-fastcgi.svg?branch=master
-   :target: https://travis-ci.org/nginx-shib/shibboleth-fastcgi
+.. image:: https://github.com/nginx-shib/shibboleth-fastcgi/actions/workflows/build.yml/badge.svg
+   :target: https://github.com/nginx-shib/shibboleth-fastcgi/actions/workflows/build.yml
 
 The Shibboleth SP software features FastCGI authorizer and responder
 applications for use with any web server that supports FastCGI.
