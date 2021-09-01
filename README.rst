@@ -1,5 +1,5 @@
 Shibboleth SP Packages with FastCGI support
-=======================================
+===========================================
 
 .. image:: https://github.com/nginx-shib/shibboleth-fastcgi/actions/workflows/build.yml/badge.svg
    :target: https://github.com/nginx-shib/shibboleth-fastcgi/actions/workflows/build.yml
@@ -31,7 +31,8 @@ Unfortunately, the default distributions of the Shibboleth SP don't come with
 FastCGI support built by default.  Questions have been raised on the
 Shibboleth mailing list about adding this support to the core build, but to
 date this hasn't happened because the ``fcgi-devel`` package lives in the `EPEL
-repositories <https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/f/>`_ and not the core.
+repositories <https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/f/>`_
+and not the core.
 
 If you can help twist someone's arm to adjust this decision, that'd help
 eliminate the need for this repository and us manually rebuilding Shibboleth
